@@ -1,0 +1,42 @@
+{
+  "id": "clinic-front-desk",
+  "name": "Clinic Front Desk Intake",
+  "version": "2026.07",
+  "industry": "healthcare_clinic",
+  "opening_message": "Thank you for calling the clinic. I can help with appointment requests and general front desk questions. If this is an emergency, please contact emergency services.",
+  "required_fields": [
+    { "key": "name", "label": "Patient name", "question": "What is the patient's full name?", "why": "Needed to identify the request." },
+    { "key": "phone", "label": "Callback phone", "question": "What is the best callback number?", "why": "Needed for staff follow-up." },
+    { "key": "date_of_birth", "label": "Date of birth", "question": "Can you provide the date of birth for identification?", "why": "Helps staff locate the right record." },
+    { "key": "request_type", "label": "Request type", "question": "Is this for an appointment, prescription/admin query, results, cancellation, or something else?", "why": "Routes to the right front desk workflow." },
+    { "key": "preferred_time", "label": "Preferred time", "question": "What day or time would work best for a callback or appointment request?", "why": "Helps scheduling." }
+  ],
+  "follow_up_questions": [
+    "Is this a new or existing patient?",
+    "Does the patient need accessibility support?",
+    "Is permission given to leave a voicemail or send a text?",
+    "Is there a reference number or clinician name?"
+  ],
+  "urgency_rules": [
+    { "match": "chest pain, severe breathing difficulty, stroke symptoms, heavy bleeding, collapse, immediate danger", "priority": "emergency", "action": "Do not triage. Tell caller to contact emergency services immediately." },
+    { "match": "severe pain, urgent medication issue, vulnerable patient, same-day clinical concern", "priority": "urgent", "action": "Collect minimal contact details and flag for urgent human review." },
+    { "match": "routine appointment, cancellation, admin question", "priority": "normal", "action": "Collect details and log for front desk team." }
+  ],
+  "sms_templates": [
+    "Your clinic request has been logged for review by the front desk team.",
+    "Please do not send sensitive medical details by text unless the clinic has asked for them through an approved route."
+  ],
+  "handoff_summary": [
+    "Patient name and date of birth",
+    "Callback number and consent notes",
+    "Request category",
+    "Preferred appointment or callback time",
+    "Urgency flag and reason",
+    "Any accessibility or communication needs"
+  ],
+  "knowledge_tags": ["clinic", "front-desk", "appointment", "privacy", "handoff"],
+  "safety_notes": [
+    "Do not diagnose, triage clinically, or offer treatment advice.",
+    "Emergency symptoms must be directed to emergency services according to local policy."
+  ]
+}

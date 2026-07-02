@@ -1,0 +1,42 @@
+{
+  "id": "estate-agent-viewing",
+  "name": "Estate Agent Viewing and Valuation Intake",
+  "version": "2026.07",
+  "industry": "property_estate_agent",
+  "opening_message": "Thanks for calling. I can help with viewings, valuations, property questions, and messages for the branch team.",
+  "required_fields": [
+    { "key": "name", "label": "Name", "question": "What is your name?", "why": "Needed for the branch record." },
+    { "key": "phone", "label": "Phone", "question": "What is the best phone number for the branch to call?", "why": "Needed for viewing or valuation confirmation." },
+    { "key": "email", "label": "Email", "question": "What email should the branch use?", "why": "Useful for sending property details." },
+    { "key": "property", "label": "Property", "question": "Which property, postcode, or area is this about?", "why": "Routes to the right listing or branch." },
+    { "key": "intent", "label": "Intent", "question": "Are you looking to buy, rent, sell, let, book a viewing, or request a valuation?", "why": "Determines the next action." }
+  ],
+  "follow_up_questions": [
+    "What dates and times work for a viewing or callback?",
+    "Are you a cash buyer, mortgage buyer, tenant, landlord, seller, or investor?",
+    "Do you have a property to sell or a chain position?",
+    "What budget, bedrooms, or move date should the branch know?"
+  ],
+  "urgency_rules": [
+    { "match": "same-day viewing, offer deadline, tenancy deadline, key issue", "priority": "high", "action": "Flag for fast branch callback." },
+    { "match": "property access problem, current tenant emergency", "priority": "urgent", "action": "Collect location and route to branch or property management." },
+    { "match": "general valuation or browsing", "priority": "normal", "action": "Collect details and preferred callback time." }
+  ],
+  "sms_templates": [
+    "Your property enquiry has been logged. The branch will contact you to confirm the next step.",
+    "Please reply with the property postcode and your preferred viewing times."
+  ],
+  "handoff_summary": [
+    "Caller name, phone, and email",
+    "Property address, postcode, or listing",
+    "Intent: buy, rent, sell, let, viewing, valuation",
+    "Budget, bedrooms, chain, move date, or tenancy notes",
+    "Preferred viewing or callback times",
+    "Urgency reason"
+  ],
+  "knowledge_tags": ["estate-agent", "viewing", "valuation", "property", "branch"],
+  "safety_notes": [
+    "Do not confirm appointments unless connected to an approved calendar or branch confirmation workflow.",
+    "Do not disclose private tenant, seller, or owner information."
+  ]
+}

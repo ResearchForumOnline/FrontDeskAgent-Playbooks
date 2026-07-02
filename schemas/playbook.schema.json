@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FrontDeskAgent Playbook",
+  "type": "object",
+  "required": ["id", "name", "version", "industry", "opening_message", "required_fields", "urgency_rules", "handoff_summary"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "industry": { "type": "string" },
+    "opening_message": { "type": "string" },
+    "required_fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "label", "question"],
+        "properties": {
+          "key": { "type": "string" },
+          "label": { "type": "string" },
+          "question": { "type": "string" },
+          "why": { "type": "string" }
+        }
+      }
+    },
+    "follow_up_questions": { "type": "array", "items": { "type": "string" } },
+    "urgency_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["match", "priority", "action"],
+        "properties": {
+          "match": { "type": "string" },
+          "priority": { "type": "string" },
+          "action": { "type": "string" }
+        }
+      }
+    },
+    "sms_templates": { "type": "array", "items": { "type": "string" } },
+    "handoff_summary": { "type": "array", "items": { "type": "string" } },
+    "knowledge_tags": { "type": "array", "items": { "type": "string" } },
+    "safety_notes": { "type": "array", "items": { "type": "string" } }
+  }
+}

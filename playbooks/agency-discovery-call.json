@@ -1,0 +1,43 @@
+{
+  "id": "agency-discovery-call",
+  "name": "Agency Discovery Call Intake",
+  "version": "2026.07",
+  "industry": "agency_consulting",
+  "opening_message": "Thanks for getting in touch. I can capture the brief and route it to the right person.",
+  "required_fields": [
+    { "key": "name", "label": "Name", "question": "What is your name?", "why": "Needed for follow-up." },
+    { "key": "company", "label": "Company", "question": "What company or project is this for?", "why": "Needed to understand the account." },
+    { "key": "email", "label": "Email", "question": "What email should the team use?", "why": "Needed for proposal and meeting follow-up." },
+    { "key": "website", "label": "Website", "question": "What website or project link should the team review?", "why": "Gives the team context before the call." },
+    { "key": "goal", "label": "Goal", "question": "What are you trying to improve: leads, website, automation, security, AI, SEO, hosting, or something else?", "why": "Routes to the right specialist." },
+    { "key": "timeline", "label": "Timeline", "question": "When do you want this live or improved?", "why": "Helps qualify urgency and fit." }
+  ],
+  "follow_up_questions": [
+    "What is the current problem costing or blocking?",
+    "Is there a budget range or decision deadline?",
+    "Who will approve the work?",
+    "Are there technical constraints, compliance needs, or existing providers?"
+  ],
+  "urgency_rules": [
+    { "match": "site down, security incident, revenue outage, urgent campaign launch", "priority": "urgent", "action": "Flag for immediate human review." },
+    { "match": "funding deadline, procurement deadline, campaign date", "priority": "high", "action": "Collect deadline and decision-maker details." },
+    { "match": "general enquiry, early exploration", "priority": "normal", "action": "Collect brief and suggest discovery call." }
+  ],
+  "sms_templates": [
+    "Your project enquiry has been logged. Please reply with any links or files the team should review.",
+    "Thanks. The team will review your brief and contact you about the next step."
+  ],
+  "handoff_summary": [
+    "Name, company, email, and phone",
+    "Website or project link",
+    "Main goal and current pain",
+    "Timeline and budget signal",
+    "Decision maker and approval process",
+    "Urgency reason and next suggested action"
+  ],
+  "knowledge_tags": ["agency", "discovery", "consulting", "ai", "seo", "security"],
+  "safety_notes": [
+    "Do not promise pricing, deadlines, or technical outcomes before review.",
+    "Security incidents should be handled through an approved secure channel."
+  ]
+}

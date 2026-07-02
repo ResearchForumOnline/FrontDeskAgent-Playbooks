@@ -1,0 +1,42 @@
+{
+  "id": "hotel-guest-services",
+  "name": "Hotel Guest Services Intake",
+  "version": "2026.07",
+  "industry": "hospitality_hotel",
+  "opening_message": "Thanks for calling. I can help with booking questions, guest requests, directions, check-in information, and messages for the hotel team.",
+  "required_fields": [
+    { "key": "name", "label": "Guest name", "question": "What name should I use for the request?", "why": "Needed for the guest record or callback." },
+    { "key": "phone_or_email", "label": "Contact", "question": "What is the best phone number or email for follow-up?", "why": "Needed if staff need to respond." },
+    { "key": "stay_date", "label": "Stay date", "question": "What date is the booking or enquiry for?", "why": "Needed for availability and routing." },
+    { "key": "request_type", "label": "Request type", "question": "Is this about a room booking, existing stay, directions, facilities, special request, or cancellation?", "why": "Routes the request." },
+    { "key": "booking_reference", "label": "Booking reference", "question": "Do you have a booking reference?", "why": "Helps staff locate the reservation." }
+  ],
+  "follow_up_questions": [
+    "How many guests and rooms are needed?",
+    "Is there an arrival time or late check-in requirement?",
+    "Are there accessibility, parking, pet, food allergy, or room preference notes?",
+    "Should the team call, email, or text back?"
+  ],
+  "urgency_rules": [
+    { "match": "locked out, safety, medical, police, fire, current guest emergency", "priority": "urgent", "action": "Collect location and route to duty staff immediately." },
+    { "match": "same-day arrival, late check-in, payment issue", "priority": "high", "action": "Flag for fast front desk review." },
+    { "match": "future booking, general question", "priority": "normal", "action": "Collect request and preferred response method." }
+  ],
+  "sms_templates": [
+    "Your hotel request has been logged. The team will respond using the contact details provided.",
+    "For arrival help, please reply with your booking reference and expected arrival time."
+  ],
+  "handoff_summary": [
+    "Guest name and contact",
+    "Booking reference if supplied",
+    "Stay date and request type",
+    "Urgency and current guest status",
+    "Room, accessibility, parking, or special request notes",
+    "Preferred response method"
+  ],
+  "knowledge_tags": ["hotel", "guest-services", "booking", "front-desk"],
+  "safety_notes": [
+    "Do not reveal guest room numbers or private reservation details.",
+    "Safety and emergency requests should go to duty staff or emergency services."
+  ]
+}

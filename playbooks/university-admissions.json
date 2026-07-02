@@ -1,0 +1,42 @@
+{
+  "id": "university-admissions",
+  "name": "University Admissions Enquiry Intake",
+  "version": "2026.07",
+  "industry": "education_admissions",
+  "opening_message": "Thanks for contacting admissions. I can help capture your question and route it to the right team.",
+  "required_fields": [
+    { "key": "name", "label": "Name", "question": "What is your full name?", "why": "Needed for the enquiry record." },
+    { "key": "email", "label": "Email", "question": "What email should admissions use to reply?", "why": "Admissions often replies by email." },
+    { "key": "course_interest", "label": "Course", "question": "Which course, subject, or department is this about?", "why": "Routes to the correct team." },
+    { "key": "study_level", "label": "Study level", "question": "Is this undergraduate, postgraduate, research, international, or another route?", "why": "Different teams may handle each route." },
+    { "key": "application_stage", "label": "Application stage", "question": "Have you applied already, or are you still deciding?", "why": "Determines the next action." }
+  ],
+  "follow_up_questions": [
+    "Are you a UK, international, clearing, transfer, or returning applicant?",
+    "Do you have an application ID?",
+    "Is the question about entry requirements, fees, visas, accommodation, open days, or scholarships?",
+    "Is there a deadline the team should know about?"
+  ],
+  "urgency_rules": [
+    { "match": "deadline today, visa deadline, offer deadline, clearing, enrolment issue", "priority": "urgent", "action": "Flag as time-sensitive and route to admissions support." },
+    { "match": "application ID and existing application problem", "priority": "high", "action": "Collect ID and route to applicant support." },
+    { "match": "general course information", "priority": "normal", "action": "Collect course, study level, and preferred reply method." }
+  ],
+  "sms_templates": [
+    "Your admissions enquiry has been logged. Please check your email for the team's reply.",
+    "If you have an application ID, please reply with it so admissions can find your record faster."
+  ],
+  "handoff_summary": [
+    "Student name and email",
+    "Course or department",
+    "Study level and applicant type",
+    "Application stage and ID if supplied",
+    "Question category",
+    "Deadline or urgency reason"
+  ],
+  "knowledge_tags": ["university", "admissions", "course", "student", "open-day"],
+  "safety_notes": [
+    "Do not guarantee admission, fee status, visa outcomes, or scholarship decisions.",
+    "Route immigration, safeguarding, or welfare concerns to the university's approved team."
+  ]
+}

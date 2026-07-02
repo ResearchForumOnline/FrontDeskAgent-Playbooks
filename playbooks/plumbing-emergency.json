@@ -1,0 +1,43 @@
+{
+  "id": "plumbing-emergency",
+  "name": "Plumbing Emergency Intake",
+  "version": "2026.07",
+  "industry": "trades_plumbing",
+  "opening_message": "Thanks for calling. I can help capture the details for the plumbing team. Are you calling about an emergency, a quote, or an appointment?",
+  "required_fields": [
+    { "key": "name", "label": "Name", "question": "What is your name?", "why": "Needed for callback and job record." },
+    { "key": "phone", "label": "Phone", "question": "What is the best phone number for the plumber to call back?", "why": "Needed if the call drops or a human takes over." },
+    { "key": "postcode", "label": "Postcode", "question": "What is the postcode or area of the property?", "why": "Needed to route by coverage and travel time." },
+    { "key": "issue", "label": "Issue", "question": "What is happening: leak, blockage, no heating, boiler problem, or something else?", "why": "Needed to decide skills, parts, and urgency." },
+    { "key": "urgency", "label": "Urgency", "question": "Is water actively leaking, is there property damage, or is heating/hot water completely off?", "why": "Needed for emergency routing." },
+    { "key": "access", "label": "Access", "question": "Will someone be at the property, and are there access notes?", "why": "Needed before dispatch." }
+  ],
+  "follow_up_questions": [
+    "Can the customer safely turn off the stop tap?",
+    "Can they send photos by SMS or WhatsApp?",
+    "Is the property domestic, commercial, landlord-managed, or tenant-occupied?",
+    "Has anyone already tried to repair it?"
+  ],
+  "urgency_rules": [
+    { "match": "active leak, burst pipe, ceiling leak, flooding, electrical risk", "priority": "urgent", "action": "Collect safe details, advise avoiding unsafe areas, and hand off immediately." },
+    { "match": "blocked toilet with no other toilet, sewage, vulnerable resident", "priority": "urgent", "action": "Flag urgent and route to emergency plumber." },
+    { "match": "quote, planned install, small drip contained", "priority": "normal", "action": "Collect details and preferred appointment time." }
+  ],
+  "sms_templates": [
+    "Thanks for calling. Please reply with photos of the issue and the postcode so the plumber can review quickly.",
+    "Your plumbing enquiry has been logged. The team will review the details and contact you as soon as possible."
+  ],
+  "handoff_summary": [
+    "Customer name and phone",
+    "Property postcode and access notes",
+    "Problem type and current damage risk",
+    "Urgency reason",
+    "Photos requested or received",
+    "Preferred time and any special notes"
+  ],
+  "knowledge_tags": ["plumbing", "emergency", "trades", "postcode", "sms"],
+  "safety_notes": [
+    "Do not give detailed repair instructions.",
+    "If there is immediate danger, advise the caller to contact emergency services or the relevant utility emergency line."
+  ]
+}
