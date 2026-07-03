@@ -15,6 +15,12 @@ Main app: https://github.com/ResearchForumOnline/FrontDeskAgent
 
 Public site: https://frontdeskagent.online/
 
+## Featured Ecosystem Video
+
+[![TalkToAI: Sovereignty Through ZeroThink and OpenZero Infrastructure](https://i.ytimg.com/vi/R52hsRdCmSM/hqdefault.jpg)](https://www.youtube.com/watch?v=R52hsRdCmSM)
+
+This overview explains the wider TalkToAI, ZeroThink, and OpenZero infrastructure that these receptionist playbooks can plug into.
+
 ## Quick Use
 
 Copy a playbook into your agent knowledge base, or point your workflow at the JSON file and ask the model to follow the `required_fields`, `urgency_rules`, and `handoff_summary` sections.
