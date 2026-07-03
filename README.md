@@ -23,6 +23,16 @@ Copy a playbook into your agent knowledge base, or point your workflow at the JS
 python tools/validate_playbooks.py
 ```
 
+## Docs
+
+- [Usage](docs/USAGE.md)
+- [Playbook design guide](docs/PLAYBOOK_DESIGN.md)
+- [OpenZero usage](docs/OPENZERO_USAGE.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Changelog](CHANGELOG.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security and privacy](SECURITY.md)
+
 ## Playbooks
 
 - `playbooks/plumbing-emergency.json`
