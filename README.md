@@ -29,9 +29,22 @@ Copy a playbook into your agent knowledge base, or point your workflow at the JS
 python tools/validate_playbooks.py
 ```
 
+## Downloads And Releases
+
+| Need | Link |
+| --- | --- |
+| Latest GitHub source archive | [Download ZIP](https://github.com/ResearchForumOnline/FrontDeskAgent-Playbooks/archive/refs/heads/main.zip) |
+| GitHub releases | [Playbook releases](https://github.com/ResearchForumOnline/FrontDeskAgent-Playbooks/releases) |
+| Usage guide | [docs/USAGE.md](docs/USAGE.md) |
+| OpenZero usage | [docs/OPENZERO_USAGE.md](docs/OPENZERO_USAGE.md) |
+| Main FrontDeskAgent app | [ResearchForumOnline/FrontDeskAgent](https://github.com/ResearchForumOnline/FrontDeskAgent) |
+
+These playbooks are useful for people searching for AI receptionist prompts, intake playbooks, front desk call flows, local agent playbooks, OpenZero receptionist flows, clinic intake AI, hotel guest service AI, admissions intake AI, and trades emergency call triage.
+
 ## Docs
 
 - [Usage](docs/USAGE.md)
+- [Downloads and releases](docs/DOWNLOADS_AND_RELEASES.md)
 - [Playbook design guide](docs/PLAYBOOK_DESIGN.md)
 - [OpenZero usage](docs/OPENZERO_USAGE.md)
 - [Roadmap](docs/ROADMAP.md)
